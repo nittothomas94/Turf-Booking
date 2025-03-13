@@ -19,14 +19,14 @@ const AddTurf = () => {
       'https://res.cloudinary.com/dckwaenfe/image/upload/v1741855955/Turf%20Booking%20Images/turf.jpg',
     availableGame: 'FootBall',
   });
-
   const navigate = useNavigate();
+  const token = localStorage.getItem('token');
 
   const onChange = (e, key) => {
     setTurfs({ ...Turfs, [key]: e.target.value });
   };
-
   console.log(Turfs);
+
   // const onUploadImage = async e => {
   //   // console.log(e.target.files[0]);
   //   const files = Array.from(e.target.files); // Convert FileList to an array
@@ -70,9 +70,12 @@ const AddTurf = () => {
 
   const OnAddTurfButtonClick = async () => {
     try {
-      console.log(Turfs);
-
-      const response = await axios.post('/turfs', Turfs);
+      console.log('Clicked');
+      await axios.post('/turfs', Turfs, {
+        headers: {
+          Authorization: `Bearer ${token}`, // Include the JWT token here
+        },
+      });
       navigate('/admin/turfs');
     } catch (e) {
       console.log(e.message);

@@ -2,7 +2,7 @@ import './Account.css';
 import Navbar from '../../components/Navbar/Navbar';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
-import axios from 'axios';
+import axios from '../../utils/axios';
 import { useState, useEffect } from 'react';
 
 const Account = () => {
@@ -38,14 +38,11 @@ const Account = () => {
   // console.log('User ID:', userId);
 
   const getUserById = async () => {
-    const response = await axios.get(
-      'http://localhost:3000/api/user/accountDetails',
-      {
-        headers: {
-          Authorization: `Bearer ${userId}`, // Send the userId as part of the Authorization header
-        },
-      }
-    );
+    const response = await axios.get('/user/accountDetails', {
+      headers: {
+        Authorization: `Bearer ${userId}`, // Send the userId as part of the Authorization header
+      },
+    });
 
     const user = response.data[0];
     setAccountInfo({

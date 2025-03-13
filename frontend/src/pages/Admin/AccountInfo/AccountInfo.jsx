@@ -2,7 +2,7 @@ import './AccountInfo.css';
 import { useState, useEffect } from 'react';
 import AdminNavigationbar from '../../../components/AdminNavigatiobar/AdminNavigationbar';
 import { jwtDecode } from 'jwt-decode';
-import axios from 'axios';
+import axios from '../../../utils/axios';
 
 const AccountInfo = () => {
   const [accountInfo, setAccountInfo] = useState({
@@ -35,14 +35,11 @@ const AccountInfo = () => {
   console.log('User ID:', userId);
 
   const getUserById = async () => {
-    const response = await axios.get(
-      'http://localhost:3000/api/user/accountDetails',
-      {
-        headers: {
-          Authorization: `Bearer ${userId}`, // Send the userId as part of the Authorization header
-        },
-      }
-    );
+    const response = await axios.get('/user/accountDetails', {
+      headers: {
+        Authorization: `Bearer ${userId}`, // Send the userId as part of the Authorization header
+      },
+    });
 
     const user = response.data[0];
     setAccountInfo({
