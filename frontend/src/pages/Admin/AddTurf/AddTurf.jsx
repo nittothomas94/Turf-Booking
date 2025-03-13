@@ -21,50 +21,31 @@ const AddTurf = () => {
   });
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
+  const [loading, setLoading] = useState(false);
 
   const onChange = (e, key) => {
     setTurfs({ ...Turfs, [key]: e.target.value });
   };
-  console.log(Turfs);
-
-  // const onUploadImage = async e => {
-  //   // console.log(e.target.files[0]);
-  //   const files = Array.from(e.target.files); // Convert FileList to an array
-  //   console.log(files); // You can now handle multiple files
-  //   const imageData = e.target.files[0];
-
-  //   const formData = new FormData();
-
-  //   formData.append('avatars', imageData);
-
-  //   try {
-  //     const response = await axios.post(
-  //       'http://localhost:3000/api/uploadImage',
-  //       formData
-  //     );
-  //     console.log(response);
-  //     setTurfs({ ...Turfs, image: response.data.urls });
-  //   } catch (error) {
-  //     console.error('image Upload Faild', error.message);
-  //   }
-  // };
+  // console.log(Turfs);
 
   const onUploadImage = async e => {
-    const imageData = e.target.files[0]; // Get the file
+    const imageData = e.target.files[0];
     const formData = new FormData();
-    formData.append('avatar', imageData); // Append the image to formData with the key 'avatars'
+    formData.append('avatar', imageData); // Append the image to formData with the key 'avatar'
 
     try {
       const response = await axios.post(
-        '/uploadImage', // Backend API URL
+        '/uploadImage',
         formData,
         { headers: { 'Content-Type': 'multipart/form-data' } } // Required for file uploads
       );
 
-      console.log(response.data.urls); // Logs the uploaded image URL(s)
-      setTurfs({ ...Turfs, image: response.data.cloudinaryUrl }); // Save the URL(s) in your state
+      console.log(response.data.urls);
+      setTurfs({ ...Turfs, image: response.data.cloudinaryUrl });
+      setLoading(false);
     } catch (error) {
       console.error('Image Upload Failed', error.message);
+      setLoading(false);
     }
   };
 
@@ -155,7 +136,7 @@ const AddTurf = () => {
         </div>
         <div className="bottom">
           <Button
-            text="Add Turf"
+            text={loading ? 'Uploading Image...' : 'Add Turf'}
             className="addTurf-btn"
             onclick={OnAddTurfButtonClick}
           />
