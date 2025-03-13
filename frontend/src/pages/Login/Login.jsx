@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import axios from '../../utils/axios';
 
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [login, setLogin] = useState();
@@ -132,7 +133,8 @@ const Login = () => {
               <a href="/">Navigate to Home Page</a>
               <br />
               <br />
-              <a href="/Admin/Login">Login As Admin</a>
+              {/* <a href="/admin/login">Login As Admin</a> */}
+              <Link to="/admin/login">Login As Admin</Link>
             </p>
           </div>
         </div>
