@@ -1,6 +1,6 @@
 import './Users.css';
-import AdminNavigationbar from '../../../components/AdminNavigatiobar/AdminNAvigationbar';
-import axios from 'axios';
+import AdminNavigationbar from '../../../components/AdminNavigatiobar/AdminNavigationbar';
+import axios from '../../../utils/axios';
 import { useEffect, useState } from 'react';
 
 const Users = () => {
@@ -9,7 +9,7 @@ const Users = () => {
   const token = localStorage.getItem('token');
 
   const getUsers = async () => {
-    const response = await axios.get('http://localhost:3000/api/user/users');
+    const response = await axios.get('/user/users');
     setUsers(response.data);
   };
 

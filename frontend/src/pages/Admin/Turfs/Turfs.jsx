@@ -1,6 +1,6 @@
 import './Turfs.css';
 import AdminNavigationbar from '../../../components/AdminNavigatiobar/AdminNavigationbar';
-import axios from 'axios';
+import axios from '../../../utils/axios';
 import { useEffect, useState } from 'react';
 import Button from '../../../components/Button/button';
 import { Navigate, useNavigate } from 'react-router-dom';
@@ -17,7 +17,7 @@ const AdminTurfsPage = () => {
 
   const getTurfs = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/turfs', {
+      const response = await axios.get('/turfs', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -37,14 +37,11 @@ const AdminTurfsPage = () => {
   };
 
   const onDeleteClick = async id => {
-    const response = await axios.delete(
-      'http://localhost:3000/api/turfs/' + id,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const response = await axios.delete('/turfs/' + id, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     alert('Turf Deleted');
     getTurfs();
   };

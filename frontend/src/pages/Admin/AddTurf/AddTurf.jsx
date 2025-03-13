@@ -3,7 +3,7 @@ import AdminNavigationbar from '../../../components/AdminNavigatiobar/AdminNavig
 import Input from '../../../components/Input/Input';
 import Button from '../../../components/Button/button';
 import { useState } from 'react';
-import axios from 'axios';
+import axios from '../../../utils/axios';
 import { useNavigate } from 'react-router-dom';
 
 const AddTurf = () => {
@@ -56,7 +56,7 @@ const AddTurf = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:3000/api/uploadImage', // Backend API URL
+        '/uploadImage', // Backend API URL
         formData,
         { headers: { 'Content-Type': 'multipart/form-data' } } // Required for file uploads
       );
@@ -72,10 +72,7 @@ const AddTurf = () => {
     try {
       console.log(Turfs);
 
-      const response = await axios.post(
-        'http://localhost:3000/api/turfs',
-        Turfs
-      );
+      const response = await axios.post('/turfs', Turfs);
       navigate('/admin/turfs');
     } catch (e) {
       console.log(e.message);

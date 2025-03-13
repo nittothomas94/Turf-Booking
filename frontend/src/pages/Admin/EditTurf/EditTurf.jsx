@@ -1,10 +1,10 @@
 import './EditTurf.css';
-import AdminNavigationbar from '../../../components/AdminNavigatiobar/AdminNAvigationbar';
+import AdminNavigationbar from '../../../components/AdminNavigatiobar/AdminNavigationbar';
 import Input from '../../../components/Input/Input';
 import Button from '../../../components/Button/button';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios from '../../../utils/axios';
 
 const EditTurf = () => {
   const [Turf, setTurf] = useState({
@@ -24,14 +24,11 @@ const EditTurf = () => {
 
   const getTurfById = async () => {
     try {
-      const response = await axios.get(
-        'http://localhost:3000/api/turfs/' + id,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await axios.get('/turfs/' + id, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       // console.log(response.data);
 
       setTurf(response.data);
@@ -65,15 +62,11 @@ const EditTurf = () => {
     console.log(Turf);
 
     try {
-      const response = await axios.patch(
-        `http://localhost:3000/api/turfs/${id}`,
-        Turf,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await axios.patch(`/turfs/${id}`, Turf, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       console.log(response.data);
       alert('updated');

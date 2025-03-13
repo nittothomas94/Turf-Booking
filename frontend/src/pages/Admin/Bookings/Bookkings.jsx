@@ -2,7 +2,7 @@ import './Bookings.css';
 import AdminNavigationbar from '../../../components/AdminNavigatiobar/AdminNavigationbar';
 import { useState, useEffect } from 'react';
 import Button from '../../../components/Button/button';
-import axios from 'axios';
+import axios from '../../../utils/axios';
 
 const Bookings = () => {
   const [booked, setBooked] = useState([]);
@@ -13,9 +13,7 @@ const Bookings = () => {
 
   const getAllBookedSlotsOfUsers = async () => {
     try {
-      const response = await axios.get(
-        'http://localhost:3000/api/slots/allbookingsofusers'
-      );
+      const response = await axios.get('/slots/allbookingsofusers');
       setBooked(response.data);
     } catch (error) {
       console.error('Error fetching booked slots:', error);
