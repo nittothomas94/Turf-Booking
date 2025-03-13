@@ -9,7 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import axios from '../../../utils/axios';
 
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const AdminLogin = () => {
   const [login, setLogin] = useState();
@@ -115,7 +115,7 @@ const AdminLogin = () => {
               />
             </div>
             <div className="loginasuser">
-              <a href="/login">Login As User</a>
+              <Link to="/login">Login As User</Link>
             </div>
           </div>
         </div>

@@ -127,13 +127,12 @@ const Login = () => {
 
             <p>
               Don't have an account?
-              <a href="/Signup">Sign up for TurfTime</a>
+              <Link to="/Signup">Sign up for TurfTime</Link>
               <br />
               <br />
-              <a href="/">Navigate to Home Page</a>
+              <Link to="/">Navigate to Home Page</Link>
               <br />
               <br />
-              {/* <a href="/admin/login">Login As Admin</a> */}
               <Link to="/admin/login">Login As Admin</Link>
             </p>
           </div>
