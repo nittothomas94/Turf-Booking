@@ -1,0 +1,127 @@
+.account-user-container {
+  background-color: rgb(227, 227, 227);
+}
+
+.account-user {
+  padding: 20px 10%;
+  display: flex;
+  gap: 40px;
+}
+
+/* Navbar of User Left Side  */
+
+.navbar-account {
+  width: 30%;
+  height: 85vh;
+  /* background-color: white; */
+  /* box-shadow: 0px 0px 5px 1px black; */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.navbar-account .pic-name {
+  width: 100%;
+  height: 150px;
+  background-color: rgb(61, 60, 60);
+  color: white;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+}
+
+.navbar-account .pic-name i {
+  font-size: 60px;
+}
+
+.navbar-account .card {
+  width: 100%;
+  height: 40px;
+  background-color: white;
+  color: black;
+  box-shadow: 0px 0px 1px 1px black;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.navbar-account .card:hover {
+  box-shadow: 0px 0px 5px 1px black;
+}
+.navbar-account .card:active {
+  transform: scale(0.9);
+}
+
+.navbar-account .card i {
+  color: green;
+}
+
+.navbar-account .card a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+}
+
+.navbar-account .card p {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+}
+
+/* Account Details Right side */
+
+.account-details {
+  width: 70%;
+  height: 62vh;
+  background-color: white;
+  border-radius: 10px;
+  padding: 0px 20px;
+}
+
+.account-details h2 {
+  font-size: 15px;
+  padding-top: 30px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid gray;
+}
+
+/*  responsive */
+
+/* ipad */
+
+@media (max-width: 10124px) {
+  /* account-user */
+  .account-user {
+    padding: 20px 10px;
+  }
+}
+
+/* mobile phone */
+
+@media (max-width: 450px) {
+  /* account-user */
+  .account-user {
+    padding: 20px 0px;
+    gap: 10px;
+  }
+
+  .navbar-account {
+    width: 50%;
+    gap: 30px;
+  }
+  .navbar-account .pic-name {
+    height: 120px;
+  }
+
+  /* account details righ side */
+
+  .account-details {
+    width: 100%;
+    height: 50vh;
+  }
+}

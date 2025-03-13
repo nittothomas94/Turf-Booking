@@ -1,0 +1,50 @@
+.account-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px 10%;
+  background-color: #ebeeec;
+}
+
+.account-admin {
+  width: 90%;
+  min-height: 95vh;
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+  padding-right: 100px;
+}
+
+.admin-information {
+  background-color: rgb(228, 228, 228);
+  padding: 20px;
+}
+
+.admin-information h1 {
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: 600;
+  color: green;
+}
+
+.admin-information p {
+  font-weight: 600;
+  padding: 20px 0px;
+  border-bottom: 1px solid black;
+}
+
+@media (max-width: 1024px) {
+  .account-container {
+    flex-direction: column;
+    gap: 0px;
+    padding: 10px 0px;
+    background-color: white;
+  }
+
+  .account-admin {
+    padding-right: 10px;
+    width: 100%;
+  }
+
+  .admin-information p {
+    font-weight: normal;
+  }
+}

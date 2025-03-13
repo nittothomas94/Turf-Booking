@@ -1,0 +1,242 @@
+.home .headding {
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+}
+
+.section1 {
+  height: 95vh;
+  width: 100%;
+  background-image: url('/images/ground-bg-image.jpeg');
+  display: flex;
+}
+
+/*LEFT SIDE STAYLINE  */
+
+.section1 .left-side {
+  /* border: 1px solid white; */
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  padding-top: 150px;
+  padding-left: 70px;
+}
+
+.section1 .left-side p {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+/* LEFT SIDE BUTTONS STYLING */
+.left-side .buttons {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.section01-home-buttons {
+  width: 200px;
+  font-weight: 200;
+  padding: 10px 50px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.section01-home-buttons:hover {
+  transform: scale(1.07);
+}
+
+.section01-home-buttons:active {
+  transform: scale(0.9);
+}
+
+.book-turf {
+  background-color: white;
+  color: black;
+}
+
+.contact-turf {
+  background-color: black;
+  color: white;
+}
+
+/* Right Side setion 1 styling */
+
+.right-side {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  /* border: 15px solid white; */
+}
+
+.right-side img {
+  width: 230px;
+  height: 320px;
+  box-shadow: 0px 0px 5px 1px white;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.right-side .footballGame {
+  position: absolute;
+  left: 15%;
+  top: 20px;
+}
+.right-side .cricketGame {
+  position: absolute;
+  right: 10%;
+  top: 20px;
+}
+.right-side .hockeyGame {
+  position: absolute;
+  left: 15%;
+  bottom: 20px;
+}
+.right-side .vollyballGame {
+  position: absolute;
+  left: 43%;
+  top: 30%;
+}
+
+.right-side .basketballGame {
+  position: absolute;
+  right: 10%;
+  bottom: 20px;
+}
+
+/* Home Setion 2 */
+
+.section2 {
+  min-height: 90vh;
+  /* background: linear-gradient(to bottom, #00940053, #000); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(200, 200, 200);
+  padding: 60px 0px;
+}
+
+.inner-box {
+  width: 95%;
+  min-height: 80%;
+  /* box-shadow: 0px 0px 10px 2px green; */
+  background-color: white;
+  border-radius: 20px;
+  padding: 50px 100px;
+}
+
+.inner-box .top {
+  height: 100px;
+  text-align: center;
+  color: green;
+}
+
+.inner-box .bottom {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.inner-box .bottom .card {
+  width: 90%;
+  height: 200px;
+  box-shadow: 0px 0px 2px 1px black;
+  display: flex;
+  gap: 50px;
+  position: relative;
+  cursor: pointer;
+}
+.inner-box .bottom .card:hover {
+  box-shadow: 0px 0px 5px 2px;
+}
+
+.inner-box .bottom .left {
+  /* background-color: red; */
+  width: 50%;
+}
+
+.inner-box .bottom .left img {
+  position: absolute;
+  border-radius: 0px;
+  left: 20px;
+  width: 250px;
+  height: 150px;
+}
+
+.inner-box .bottom .right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Home Section 3 */
+
+.section3 {
+  width: 100%;
+  padding: 20px 10%;
+}
+
+.section3 img {
+  width: 100%;
+  object-fit: contain;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .section1 {
+    height: 80vh;
+  }
+
+  .section1 .left-side {
+    width: 100%;
+    padding: 0px;
+    padding-top: 20vh;
+  }
+
+  .section01-home-buttons {
+    width: 200px;
+  }
+
+  .right-side {
+    display: none;
+  }
+
+  /* section 2 */
+
+  .section2 {
+    min-height: 100vh;
+    background-color: white;
+  }
+
+  .inner-box {
+    padding: 50px 30px;
+    background-color: rgb(229, 229, 229);
+  }
+  .inner-box .bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .inner-box .bottom .card {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 0px 15px 1px black;
+  }
+
+  /* section 3 */
+
+  .section3 {
+    padding: 20px 2%;
+  }
+}
+
+/* Mobile devices (Screen width up to 450px) */
+@media (max-width: 450px) {
+}

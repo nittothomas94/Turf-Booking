@@ -1,0 +1,74 @@
+.bookings-container {
+  display: flex;
+  padding: 20px 10%;
+  gap: 20px;
+  background-color: #ebeeec;
+}
+
+.booking-admin {
+  height: 95vh;
+  width: 100%;
+  background-color: white;
+  overflow-y: scroll;
+  padding: 20px;
+}
+
+.booking-admin h1 {
+  color: rgb(6, 91, 6);
+  margin-bottom: 40px;
+}
+
+.booking-admin .card {
+  width: 99%;
+  height: 100px;
+  background-color: rgb(235, 235, 235);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 20px;
+  padding-right: 20px;
+  box-shadow: 0px 0px 1px 1px black;
+}
+
+.booking-admin .card:hover {
+  box-shadow: 0px 0px 3px 1px black;
+}
+
+.booking-admin .card img {
+  width: 180px;
+  height: 100px;
+}
+
+.booking-admin .card p {
+  /* font-weight: 600; */
+  font-size: 12px;
+}
+
+.booking-admin .card .click-to-see-details {
+  background-color: green;
+  color: white;
+}
+
+/* responsive  */
+
+@media (max-width: 1024px) {
+  .bookings-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .booking-admin {
+    overflow-y: visible;
+  }
+}
+
+@media (max-width: 750px) {
+  .booking-admin .card {
+    height: fit-content;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0px 0px 5px 1px gray;
+  }
+}

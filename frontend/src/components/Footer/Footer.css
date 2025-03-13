@@ -1,0 +1,97 @@
+.footer {
+  min-height: 40vh;
+  background-color: rgb(19, 14, 33);
+  /* border-bottom: 2px solid white; */
+  color: white;
+  position: sticky;
+}
+
+/* Footer Top (Left Center Right) */
+.top-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 92%;
+}
+
+/* Footer Left */
+.top-footer .left {
+  border-right: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.top-footer .left .app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+  gap: 15px;
+  padding: 20px;
+}
+.top-footer .center {
+  border-right: 1px solid white;
+  padding: 20px 20px 10px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.top-footer .center .footer-link {
+  color: white;
+  text-decoration: none;
+}
+
+.top-footer .center .footer-link:hover {
+  color: rgb(0, 221, 255);
+  text-decoration: none;
+}
+
+/* Footer-Top Right */
+
+.top-footer .right {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 20px 30px;
+  gap: 15px;
+}
+
+.top-footer .right .Connect-Icons {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Responsie */
+
+@media (max-width: 1024px) {
+  .footer {
+    height: 30vh;
+  }
+}
+
+/* Mobile devices (Screen width up to 450px) */
+@media (max-width: 450px) {
+  .top-footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .top-footer .left {
+    border: none;
+    padding: 30px;
+    border-bottom: 2px solid white;
+  }
+
+  .top-footer .center {
+    padding-left: 50px;
+    background-color: rgb(19, 14, 33);
+    display: flex;
+  }
+
+  .top-footer .right {
+    padding-left: 50px;
+    background-color: rgb(19, 14, 33);
+  }
+}

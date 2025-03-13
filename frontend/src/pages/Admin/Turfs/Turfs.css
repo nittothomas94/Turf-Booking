@@ -1,0 +1,143 @@
+.admin-turfs-container {
+  display: flex;
+  padding: 20px 10%;
+  gap: 20px;
+  background-color: #ebeeec;
+}
+
+.admin-turfs {
+  padding: 10px;
+  background-color: white;
+}
+
+.admin-turfs .top {
+  height: 40px;
+  border-bottom: 1px solid rgb(197, 196, 196);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 60px;
+}
+
+.admin-turfs .top .right .addTurfButton {
+  background-color: rgb(17, 135, 17);
+  width: 180px;
+  height: 35px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.admin-turfs .top .right .addTurfButton:active {
+  transform: scale(0.9);
+}
+
+/* Bottoom Admin Right */
+
+.admin-turfs .bottom {
+  height: 88vh;
+  overflow-y: scroll;
+}
+
+.admin-turfs .bottom .bottom-headings {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  padding: 10px 5px;
+  border-bottom: 1px solid gray;
+  margin-bottom: 20px;
+}
+
+.admin-turfs .bottom .card {
+  min-height: 150px;
+  width: 99%;
+  padding-right: 20px;
+  /* border-bottom: 1px solid gray; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  background-color: rgb(234, 234, 234);
+  margin-bottom: 15px;
+}
+
+.admin-turfs .bottom .card:hover {
+  box-shadow: 0px 0px 3px 1px rgb(105, 105, 105);
+}
+
+.admin-turfs .bottom .card .Turfimg {
+  /* background-color: white; */
+  width: 250px;
+  height: 150px;
+  position: relative;
+}
+
+.admin-turfs .bottom .card img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 0%;
+  width: 250px;
+  height: 150px;
+}
+
+.admin-turfs .bottom .card .action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.action-buttons-button {
+  width: 90px;
+  height: 35px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.action-buttons-button:active {
+  transform: scale(0.9);
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .admin-turfs-container {
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .admin-turfs {
+    padding: 0px;
+  }
+
+  .admin-turfs .top {
+    padding: 30px 15px;
+  }
+  .admin-turfs .top .right {
+    display: block;
+    padding: 0px;
+  }
+
+  .admin-turfs .bottom .bottom-headings {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .admin-turfs .bottom {
+    margin-top: 20px;
+    overflow-y: visible;
+    min-height: 90vh;
+  }
+
+  .admin-turfs .bottom .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px 1px rgb(150, 150, 150);
+    padding: 10px 0px;
+    background-color: white;
+  }
+
+  .admin-turfs .bottom .card p {
+    margin-top: 5px;
+  }
+}

@@ -1,0 +1,95 @@
+.loginPage {
+  height: 100vh;
+  background-image: url('/images/ground-bg-image.jpeg');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 150px;
+}
+
+/* Left */
+
+.loginPage .left {
+  display: flex;
+  flex-direction: column;
+  font-size: 40px;
+}
+
+.loginPage .left img {
+  width: 180px;
+  height: 150px;
+  box-shadow: none;
+}
+
+/* Right */
+
+.login {
+  width: 500px;
+  height: 700px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 50px 60px;
+}
+
+/* Login Top */
+.login .top {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 30px;
+  border-bottom: 5px solid black;
+}
+
+.login .inputField {
+  border: 1px solid black;
+}
+
+.login .inputField:hover {
+  border: 2px solid black;
+}
+.login .LoginButton {
+  cursor: pointer;
+}
+.login .LoginButton:hover {
+  box-shadow: 0px 0px 5px 1px green;
+}
+
+.login .LoginButton:active {
+  transform: scale(0.9);
+}
+
+.login #or {
+  margin: 20px 49%;
+}
+
+/* Login Bottom */
+
+.bottom .box {
+  margin-top: 20px;
+  position: relative;
+
+  cursor: pointer;
+}
+
+.bottom .box:hover {
+  background-color: black;
+}
+
+.bottom img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+  left: 10%;
+  padding: 2px;
+}
+
+.loginasuser {
+  text-align: center;
+  margin-top: 10%;
+}
+
+.loginasuser a {
+  color: black;
+}

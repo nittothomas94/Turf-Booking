@@ -1,0 +1,150 @@
+.main {
+  background-color: #e9ebee;
+}
+
+.main .heading {
+  color: green;
+}
+
+.container-bookingPage {
+  width: 75%;
+  min-height: 100vh;
+  margin: 0px auto;
+  padding: 10px;
+  background-color: white;
+  display: flex;
+  gap: 2%;
+}
+
+.turf-details {
+  /* border: 1px solid black; */
+  box-shadow: 0px 0px 2px 1px rgb(0, 0, 0);
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border-radius: 6px;
+  padding-bottom: 20px;
+  padding: 10px;
+}
+
+.turf-details img {
+  width: 500px;
+  height: 300px;
+  border-radius: 40px;
+}
+
+/* Google Map */
+.turf-details-map .googleMap {
+  width: 100%;
+  height: 300px;
+  margin-top: 10px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding-top: 70px;
+}
+
+.googleMap h2 {
+  text-align: center;
+  color: green;
+  font-weight: bold;
+}
+
+.googleMap a {
+  padding: 10px 20px;
+  background-color: #2874f0;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 15px;
+}
+
+/* BOOIMG AND ALL */
+.booking-and-all {
+  width: 60%;
+  box-shadow: 0px 0px 3px 4px rgb(218, 218, 218);
+  padding: 30px;
+  height: 100vh;
+}
+
+.booking-and-all h1 {
+  font-size: 50px;
+  color: rgb(12, 95, 31);
+}
+
+.booking {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: black;
+}
+
+.booking .select-date {
+  height: 40px;
+}
+
+.booking h2 {
+  margin-top: 30px;
+}
+
+/* slot conatiner and slot styiling  */
+
+.slot-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  padding-right: 70px;
+}
+
+.slot-container .slot {
+  background-color: rgb(219, 217, 217);
+  color: black;
+  cursor: pointer;
+}
+
+.slot-container .slot:hover {
+  transform: scale(1.09);
+}
+
+.slot-container .booked {
+  background-color: red;
+  color: white;
+  cursor: not-allowed;
+}
+
+.slot-container .booked:hover {
+  transform: none;
+}
+
+.slot-container .selected {
+  background-color: green;
+  color: white;
+}
+
+.slot-container .slot,
+.booked,
+.selected {
+  width: 100px;
+  height: 60px;
+  padding: 10px;
+}
+
+.sub-heading {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(12, 83, 12);
+}
+
+.book-now {
+  width: 100%;
+  height: 40px;
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: rgb(19, 147, 19);
+}

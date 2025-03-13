@@ -1,0 +1,241 @@
+.turfPage {
+  background-image: url('public/images/foodball-in-grond.jpg');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  min-height: 120vh;
+}
+
+.turfPage .heading {
+  color: #0c6a38;
+}
+
+/* section  1 Styling */
+
+.section1-TurfPage {
+  background-color: white;
+  border-bottom: 3px solid black;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 30px;
+}
+
+.section1-TurfPage .right input {
+  width: 240px;
+  height: 35px;
+  border: 1px solid black;
+  position: relative;
+  padding: 0px 35px;
+  font-weight: bold;
+}
+
+.section1-TurfPage .right i {
+  position: absolute;
+  z-index: 1;
+  color: black;
+  padding: 10px;
+  padding-top: 18px;
+}
+
+.section1-TurfPage .right .okbutton {
+  position: absolute;
+  right: 80px;
+  margin-top: 12px;
+  z-index: 1;
+  color: black;
+  background-color: blue;
+  padding: 5px 10px;
+}
+
+.section1-TurfPage .right .okbutton:active {
+  transform: scale(0.9);
+}
+
+/* section 2 Styling */
+.section2-TurfPage {
+  padding: 10px 20px;
+  display: flex;
+  gap: 20px;
+}
+
+/* Filter Box Styling */
+.section2-TurfPage .leftFilter {
+  background-color: rgba(201, 211, 204, 0.378);
+  width: 20%;
+  height: 90vh;
+  padding: 10px 20px;
+}
+
+.filter-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filter-box h2 {
+  margin-top: 10px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid black;
+}
+
+.all-city-filter-button {
+  border: 1px solid black;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+.filter-button {
+  /* background-color: #008000; */
+  border: 1px solid black;
+  padding: 5px 20px;
+}
+
+/* Turf Lising right Styling */
+.section2-TurfPage .rightTurf {
+  width: 80%;
+  min-height: 90vh;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  background-color: rgba(201, 211, 204, 0.378);
+}
+
+/* Turfs Right Card Styling */
+.rightTurf .card {
+  box-shadow: 0px 0px 20px 4px black;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 10px;
+  position: relative;
+  background-color: white;
+}
+
+.rightTurf .card:hover {
+  cursor: pointer;
+}
+
+/*Card left */
+.rightTurf .card .left {
+  width: 35%;
+  height: 100%;
+}
+.rightTurf .card .left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card Right */
+.rightTurf .card .right {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.rightTurf .card .right .buttons {
+  display: flex;
+  gap: 30px;
+}
+.card-button:active {
+  transform: scale(0.9);
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  /* section1 */
+  .section1-TurfPage {
+    height: 150px;
+    padding: 20px;
+    padding-top: 40px;
+  }
+
+  /* section2 */
+
+  .section2-TurfPage {
+    padding: 20px 0px;
+    gap: 10px;
+  }
+
+  .section1-TurfPage .heading {
+    font-size: 20px;
+  }
+
+  .section2-TurfPage .rightTurf {
+    grid-template-columns: 1fr;
+  }
+
+  .rightTurf .card {
+    height: 200px;
+    border-radius: 20px;
+  }
+
+  .rightTurf .card .left img {
+    border-radius: 10px;
+  }
+  .rightTurf .card .right {
+    padding: 0px;
+    /* display: none; */
+    /* padding-bottom: 200px; */
+  }
+
+  .rightTurf .right h2 {
+    font-size: 20px;
+  }
+
+  .rightTurf .card .right .buttons {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 450px) {
+  .section1-TurfPage {
+    padding: 10px;
+    height: 100px;
+    gap: 8px;
+  }
+
+  .section1-TurfPage .heading {
+    font-size: 14px;
+  }
+
+  .section1-TurfPage .right .input {
+    width: 180px;
+  }
+
+  /* Section 2 */
+
+  .section2-TurfPage .leftFilter {
+    display: none;
+  }
+
+  .section2-TurfPage .rightTurf {
+    padding: 50px 10px;
+    width: 100%;
+    background-color: rgb(228, 255, 230);
+  }
+  .rightTurf .card {
+    border-radius: 10px;
+    height: 150px;
+  }
+  .rightTurf .card .left {
+    width: 50%;
+  }
+
+  .rightTurf .card .right {
+    /* flex-direction: row; */
+    gap: 0px;
+  }
+
+  .rightTurf .card .right .card-button {
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+    font-size: 10px;
+  }
+}

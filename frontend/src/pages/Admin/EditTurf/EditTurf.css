@@ -1,0 +1,59 @@
+.edi-turf-container {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+.EditTurf {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  background-color: #d5d9d7;
+  padding: 10px;
+}
+
+.EditTurf .top {
+  padding: 50px 20px 10px 20px;
+  border-bottom: 1px solid gray;
+  margin: 10px auto;
+}
+
+/* Center */
+
+.EditTurf .center {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  /* padding: 40px; */
+  margin: 30px auto;
+}
+
+.EditTurf .center .edit-turf-input {
+  width: 400px;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Bottom AddTurf Button */
+
+.EditTurf .bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 40px;
+  padding-right: 15%;
+}
+
+.EditTurf .bottom .EditTurf-btn {
+  width: 150px;
+  height: 40px;
+  background-color: green;
+  margin: 50px 20%;
+  /* border-radius: 10px; */
+}
+
+.EditTurf .bottom .EditTurf-btn:active {
+  transform: scale(0.9);
+}

@@ -1,0 +1,211 @@
+.contact {
+  min-height: 100vh;
+}
+
+/* contact Page Setion 01 */
+.con-sec1 {
+  height: 300px;
+  width: 100%;
+  background-color: rgb(18, 156, 18);
+  margin-top: -10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.con-sec1 h1 {
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.con-sec1 p {
+  width: 40%;
+  text-align: center;
+}
+
+/* contact section 02 */
+.con-sec2 {
+  height: 88vh;
+  display: flex;
+}
+
+/* contact setion 2 Left */
+.con-sec2 .left {
+  width: 55%;
+  padding: 10vh 8% 10vh 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 30px;
+}
+
+.con-sec2 .left .heading {
+  color: green;
+  font-size: 60px;
+}
+
+.cont-iconsMain {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.cont-icons2 {
+  padding: 10px;
+  padding-left: 50px;
+  position: relative;
+  background-color: rgb(227, 227, 227);
+  font-size: 15px;
+}
+
+.cont-icons2 i {
+  color: green;
+  font-size: 35px;
+  position: absolute;
+  left: 5px;
+  top: 8px;
+}
+
+/* Folow Us On */
+.cont-iconsMain02 i {
+  margin-left: 20px;
+  color: rgb(14, 108, 14);
+}
+
+/* Contact setion 2 Right  & Contact Box */
+.con-sec2 .right {
+  width: 45%;
+  height: 100%;
+  /* position: relative; */
+}
+
+.con-sec2 .contact-box {
+  width: 400px;
+  padding: 30px;
+  height: 80%;
+  margin-top: 7%;
+  margin-left: 50px;
+  background-color: rgb(227, 227, 227);
+  box-shadow: 0px 0px 10px 2px black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-box .input {
+  height: 55px;
+}
+
+.contact-box .con-box-messageInput {
+  height: 100px;
+}
+
+.send-button {
+  width: 100px;
+  height: 30px;
+  background-color: rgb(36, 115, 36);
+  color: white;
+  margin-left: 31%;
+}
+
+#marketing {
+  position: absolute;
+  bottom: -10px;
+  right: 0%;
+  width: 200px;
+  height: 300px;
+  object-fit: contain;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  /* Section 01 */
+
+  .con-sec1 {
+    background-color: rgb(44, 198, 44);
+  }
+
+  .con-sec1 p {
+    width: 75%;
+    text-align: start;
+  }
+
+  /* section 02 */
+
+  .con-sec2 {
+    min-height: 72vh;
+    flex-direction: column;
+  }
+
+  .con-sec2 .left {
+    width: 100%;
+  }
+
+  .con-sec2 .right {
+    width: 100%;
+  }
+}
+
+/* mobile */
+
+@media (max-width: 1024px) {
+  /* section 01 */
+  .con-sec1 p {
+    width: 95%;
+    text-align: center;
+  }
+
+  /* section 02 */
+
+  .con-sec2 {
+    min-height: 120vh;
+  }
+
+  .con-sec2 .left {
+    padding: 30px 15px;
+    padding-top: 40px;
+    gap: 20px;
+  }
+
+  .con-sec2 .left .heading {
+    font-size: 40px;
+  }
+
+  .con-sec2 .left p {
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  .con-sec2 .left .cont-iconsMain {
+    grid-template-columns: 1fr;
+  }
+
+  /* contact section 02 right side contact box  */
+
+  .con-sec2 .right {
+    width: 100%;
+    margin-left: 0px;
+  }
+  .con-sec2 .right .contact-box {
+    gap: 100px;
+  }
+
+  /* marketing image */
+
+  #marketing {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .con-sec2 .right .contact-box {
+    margin: 20px;
+    margin-left: 30px;
+  }
+}
