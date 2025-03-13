@@ -127,7 +127,7 @@ const Login = () => {
 
             <p>
               Don't have an account?
-              <Link to="/Signup">Sign up for TurfTime</Link>
+              <Link to="/signup">Sign up for TurfTime</Link>
               <br />
               <br />
               <Link to="/">Navigate to Home Page</Link>
