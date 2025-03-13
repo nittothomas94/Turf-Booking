@@ -1,6 +1,6 @@
 import './AccountInfo.css';
 import { useState, useEffect } from 'react';
-import AdminNavigationbar from '../../../components/AdminNavigatiobar/AdminNAvigationbar';
+import AdminNavigationbar from '../../../components/AdminNavigatiobar/AdminNavigationbar';
 import { jwtDecode } from 'jwt-decode';
 import axios from 'axios';
 
