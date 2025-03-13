@@ -126,13 +126,13 @@ const Login = () => {
 
             <p>
               Don't have an account?
-              <a href="/signup">Sign up for TurfTime</a>
+              <a href="/Signup">Sign up for TurfTime</a>
               <br />
               <br />
               <a href="/">Navigate to Home Page</a>
               <br />
               <br />
-              <a href="/admin/login">Login As Admin</a>
+              <a href="/Admin/Login">Login As Admin</a>
             </p>
           </div>
         </div>
