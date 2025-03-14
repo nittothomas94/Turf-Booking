@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios from '../../utils/axios';
 import { useParams } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 import Input from '../../components/Input/Input';
@@ -38,7 +38,7 @@ const BookingPage = () => {
   // When a user selects a date, the function checkBookedSlots() runs to fetch already booked slots for that specific date.
 
   const getTurfById = async () => {
-    const response = await axios.get('http://localhost:3000/api/turfs/' + id, {
+    const response = await axios.get('/turfs/' + id, {
       headers: {
         Authorization: `Bearer ${token}`, // Attach token in Authorization header
       },
@@ -56,10 +56,7 @@ const BookingPage = () => {
   const checkBookedSlots = async () => {
     try {
       const response = await axios.get(
-        'http://localhost:3000/api/slots/bookedslots' +
-          id +
-          '?date=' +
-          selectedDate
+        '/slots/bookedslots' + id + '?date=' + selectedDate
       );
       setBookedSlots(response.data.bookedSlots);
     } catch (error) {
@@ -109,7 +106,7 @@ const BookingPage = () => {
 
     try {
       await axios.post(
-        'http://localhost:3000/api/slots',
+        '/slots',
         {
           turfId: id,
           userId: userId, // Passing the extracted user ID

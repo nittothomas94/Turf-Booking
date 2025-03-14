@@ -1,6 +1,6 @@
 import './Booked.css';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from '../../utils/axios';
 import Navbar from '../../components/Navbar/Navbar';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/button';
@@ -17,34 +17,19 @@ const Booked = () => {
 
   const getBookedSlotsOfUserById = async () => {
     try {
-      const response = await axios.get(
-        'http://localhost:3000/api/slots/bookingsofuser',
-        {
-          headers: {
-            Authorization: `Bearer ${token}`, // Attach token in Authorization header
-          },
-        }
-      );
+      const response = await axios.get('/slots/bookingsofuser', {
+        headers: {
+          Authorization: `Bearer ${token}`, // Attach token in Authorization header
+        },
+      });
       setBooked(response.data); // Update state with API response
     } catch (error) {
       console.error('Error fetching booked slots:', error);
     }
   };
 
-  console.log(booked);
+  // console.log(booked);
 
-  // const getTurfDetailsBookedSlotsOfUserById = async () => {
-  //   try {
-  //     const response = await axios.get(
-  //       'http://localhost:3000/api/turfs/' + { booking }
-  //     );
-  //     setBooked(response.data); // Update state with API response
-  //   } catch (error) {
-  //     console.error('Error fetching booked slots:', error);
-  //   }
-  // };
-
-  //
   const generatePDF = booking => {
     console.log('sdfsd');
     const doc = new jsPDF();

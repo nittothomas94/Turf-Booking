@@ -26,23 +26,23 @@ const AddTurf = () => {
   const onChange = (e, key) => {
     setTurfs({ ...Turfs, [key]: e.target.value });
   };
-  // console.log(Turfs);
+  console.log(Turfs);
 
   const onUploadImage = async e => {
     const imageData = e.target.files[0];
     const formData = new FormData();
-    formData.append('avatar', imageData); // Append the image to formData with the key 'avatar'
+    formData.append('avatar', imageData);
 
     try {
-      const response = await axios.post(
-        '/uploadImage',
-        formData,
-        { headers: { 'Content-Type': 'multipart/form-data' } } // Required for file uploads
-      );
+      setLoading(true); // Start loading
+      const response = await axios.post('/uploadImage', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+        timeout: 30000, // Set timeout to 30 seconds
+      });
 
-      console.log(response.data.urls);
+      // console.log(response.data.urls);
       setTurfs({ ...Turfs, image: response.data.cloudinaryUrl });
-      setLoading(false);
+      setLoading(false); // Stop loading
     } catch (error) {
       console.error('Image Upload Failed', error.message);
       setLoading(false);
