@@ -4,12 +4,12 @@ import axios from '../../../utils/axios';
 import { useEffect, useState } from 'react';
 import Button from '../../../components/Button/button';
 import { Navigate, useNavigate } from 'react-router-dom';
+import AdminTurfsSklton from '../../../components/AdminTurfsSklton/AdminTurfsSklton';
 const AdminTurfsPage = () => {
   const [Turfs, setTurfs] = useState([]);
-
   const token = localStorage.getItem('token');
-
   const navgate = useNavigate();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getTurfs();
@@ -23,6 +23,7 @@ const AdminTurfsPage = () => {
         },
       });
       setTurfs(response.data);
+      setLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -75,37 +76,39 @@ const AdminTurfsPage = () => {
             <p>UpdatedAt</p>
             <p>Actions</p>
           </div>
-          {Turfs.map(item => {
-            return (
-              // card
-              <div className="card">
-                <div className="Turfimg">
-                  <img src={item.image[0]} alt="Turf Image" />
-                </div>
-                <p>{item.name}</p>
-                <p>{item.city}</p>
-                <p>{item.updatedAt}</p>
-                <div className="action-buttons">
-                  <Button
-                    text="Edit"
-                    className="action-buttons-button"
-                    backgroundcolor="green"
-                    onclick={() => {
-                      onEditClick(item._id);
-                    }}
-                  />
-                  <Button
-                    text="Delete"
-                    className="action-buttons-button"
-                    backgroundcolor="red"
-                    onclick={() => {
-                      onDeleteClick(item._id);
-                    }}
-                  />
-                </div>
-              </div>
-            );
-          })}
+
+          {loading
+            ? [1, 2, 3, 4, 5, 6, 7, 8].map(() => <AdminTurfsSklton />)
+            : Turfs.map(item => {
+                return (
+                  <div className="card">
+                    <div className="Turfimg">
+                      <img src={item.image[0]} alt="Turf Image" />
+                    </div>
+                    <p>{item.name}</p>
+                    <p>{item.city}</p>
+                    <p>{item.updatedAt}</p>
+                    <div className="action-buttons">
+                      <Button
+                        text="Edit"
+                        className="action-buttons-button"
+                        backgroundcolor="green"
+                        onclick={() => {
+                          onEditClick(item._id);
+                        }}
+                      />
+                      <Button
+                        text="Delete"
+                        className="action-buttons-button"
+                        backgroundcolor="red"
+                        onclick={() => {
+                          onDeleteClick(item._id);
+                        }}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
         </div>
       </div>
     </div>

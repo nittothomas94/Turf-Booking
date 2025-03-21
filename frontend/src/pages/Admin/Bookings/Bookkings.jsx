@@ -3,9 +3,11 @@ import AdminNavigationbar from '../../../components/AdminNavigatiobar/AdminNavig
 import { useState, useEffect } from 'react';
 import Button from '../../../components/Button/button';
 import axios from '../../../utils/axios';
+import BookedCardSklton from '../../../components/BookedCardSklton/BookedCardSklton';
 
 const Bookings = () => {
   const [booked, setBooked] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getAllBookedSlotsOfUsers();
@@ -15,6 +17,7 @@ const Bookings = () => {
     try {
       const response = await axios.get('/slots/allbookingsofusers');
       setBooked(response.data);
+      setLoading(false);
     } catch (error) {
       console.error('Error fetching booked slots:', error);
     }
@@ -29,7 +32,9 @@ const Bookings = () => {
       <div className="booking-admin">
         <h1>Booked Turfs</h1>
 
-        {booked.length > 0 ? (
+        {loading ? (
+          [1, 2, 3].map(() => <BookedCardSklton />)
+        ) : booked.length > 0 ? (
           booked.map(item => (
             <div className="card" key={item._id}>
               <img src="/images/default-turf.jpg" alt="turf Image" />
@@ -44,11 +49,11 @@ const Bookings = () => {
                 <strong>Order ID:</strong> {item._id}
               </p>
 
-              {/* <Button
+              <Button
                 text="Download PDF"
                 className="download-pdf"
                 onclick={() => generatePDF(item)}
-              /> */}
+              />
             </div>
           ))
         ) : (

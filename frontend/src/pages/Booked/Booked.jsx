@@ -5,11 +5,13 @@ import Navbar from '../../components/Navbar/Navbar';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/button';
 import { jsPDF } from 'jspdf';
-// import html2canvas from 'html2canvas';
+import html2canvas from 'html2canvas';
+import BookedCardSklton from '../../components/BookedCardSklton/BookedCardSklton';
 
 const Booked = () => {
   const [booked, setBooked] = useState([]);
   const token = localStorage.getItem('token'); // Retrieve token from localStorage
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getBookedSlotsOfUserById();
@@ -23,6 +25,7 @@ const Booked = () => {
         },
       });
       setBooked(response.data); // Update state with API response
+      setLoading(false);
     } catch (error) {
       console.error('Error fetching booked slots:', error);
     }
@@ -62,7 +65,9 @@ const Booked = () => {
 
           {/* Booked Turf Lists */}
           <div className="booked-turfs-list">
-            {booked.length > 0 ? (
+            {loading ? (
+              [1, 2, 3].map(() => <BookedCardSklton />)
+            ) : booked.length > 0 ? (
               booked.map(item => (
                 <div className="card" key={item._id}>
                   <img src="/images/default-turf.jpg" alt="turf Image" />

@@ -5,12 +5,13 @@ import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import { useState, useEffect } from 'react';
 import axios from '../../utils/axios';
+import CardSklton from '../../components/CardSkelton/CardSkelton';
+
 const Home = () => {
   const navigate = useNavigate();
-
   const token = localStorage.getItem('token');
-
   const [Turfs, setTurfs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const onBookTurfClick = () => {
     navigate('/turfs');
@@ -25,9 +26,10 @@ const Home = () => {
   }, []);
 
   const getTurfs = async () => {
-    const response = await axios.get('hometurf');
-    const firstSixTurfs = response.data.slice(0, 4); // Select first 6 documents
+    const response = await axios.get('/hometurf');
+    const firstSixTurfs = response.data.slice(0, 4); // Select first 4 documents
     setTurfs(firstSixTurfs);
+    setLoading(false);
   };
 
   console.log(Turfs);
@@ -105,29 +107,31 @@ const Home = () => {
             </div>
             {/* bottom Popular Turfs Lists */}
             <div className="bottom">
-              {Turfs.map(item => {
-                return (
-                  // Card
-                  <div
-                    className="card"
-                    onClick={() => {
-                      navigate('/turfs');
-                    }}
-                  >
-                    <div className="left">
-                      {item.image && item.image.length > 0 ? (
-                        <img src={item.image[0]} alt="turf image" />
-                      ) : (
-                        console.log('no image')
-                      )}
-                    </div>
-                    <div className="right">
-                      <h4 className="heading">{item.name}</h4>
-                      <p>{item.location}</p>
-                    </div>
-                  </div>
-                );
-              })}
+              {loading
+                ? [1, 2, 3, 4].map(() => <CardSklton />)
+                : Turfs.map(item => {
+                    return (
+                      // Card
+                      <div
+                        className="card"
+                        onClick={() => {
+                          navigate('/turfs');
+                        }}
+                      >
+                        <div className="left">
+                          {item.image && item.image.length > 0 ? (
+                            <img src={item.image[0]} alt="turf image" />
+                          ) : (
+                            console.log('no image')
+                          )}
+                        </div>
+                        <div className="right">
+                          <h4 className="heading">{item.name}</h4>
+                          <p>{item.location}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
             </div>
           </div>
         </div>

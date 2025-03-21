@@ -6,17 +6,15 @@ import Input from '../../components/Input/Input';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
+import CardSklton from '../../components/CardSkelton/CardSkelton';
 
 const Turfs = () => {
   const [Turfs, setTurfs] = useState([]);
-
   const navigate = useNavigate();
-
   const [allTurfs, setAllTurfs] = useState([]); //for filtering easly after feaching all data
-
   const [allCityFilterButton, setAllCityFilterButton] = useState(true);
-
   const token = localStorage.getItem('token'); // Retrieve token from localStorage
+  const [loading, setLoading] = useState(true);
 
   if (!token) {
     console.error('Token not found. User may not be authenticated.');
@@ -38,6 +36,7 @@ const Turfs = () => {
     setTurfs(response.data);
     setAllCityFilterButton(true);
     setSelectedCity(null);
+    setLoading(false);
   };
 
   // Card Click
@@ -173,43 +172,45 @@ const Turfs = () => {
           {/* Turfs side */}
 
           <div className="rightTurf">
-            {Turfs.map((item, index) => {
-              return (
-                <div className="card" key={index}>
-                  <div className="left">
-                    <img src={item.image[0]} alt="" />
-                  </div>
+            {loading
+              ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => <CardSklton />)
+              : Turfs.map((item, index) => {
+                  return (
+                    <div className="card" key={index}>
+                      <div className="left">
+                        <img src={item.image[0]} alt="" />
+                      </div>
 
-                  <div className="right">
-                    <h2 className="heading">{item.name}</h2>
-                    <p>{item.location}</p>
-                    <p>{item.pricePerHour}</p>
+                      <div className="right">
+                        <h2 className="heading">{item.name}</h2>
+                        <p>{item.location}</p>
+                        <p>{item.pricePerHour}</p>
 
-                    {/* Bttons in Card */}
-                    <div className="buttons">
-                      <Button
-                        text="Book Now"
-                        padding="10px 30px"
-                        backgroundcolor="green"
-                        color="white"
-                        className="card-button"
-                        onclick={() => {
-                          onCardClick(item._id);
-                        }}
-                      />
+                        {/* Bttons in Card */}
+                        <div className="buttons">
+                          <Button
+                            text="Book Now"
+                            padding="10px 30px"
+                            backgroundcolor="green"
+                            color="white"
+                            className="card-button"
+                            onclick={() => {
+                              onCardClick(item._id);
+                            }}
+                          />
 
-                      <Button
-                        text="See Details"
-                        padding="10px 30px"
-                        backgroundcolor="green"
-                        color="white"
-                        className="card-button"
-                      />
+                          <Button
+                            text="See Details"
+                            padding="10px 30px"
+                            backgroundcolor="green"
+                            color="white"
+                            className="card-button"
+                          />
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              );
-            })}
+                  );
+                })}
           </div>
         </div>
       </div>

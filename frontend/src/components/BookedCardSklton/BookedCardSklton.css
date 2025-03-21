@@ -1,0 +1,23 @@
+.booked-cardSklton {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 16px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  gap: 10px;
+  margin: 16px;
+  max-width: 800px;
+}
+
+.sklton-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sklton-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
