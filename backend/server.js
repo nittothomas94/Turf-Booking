@@ -13,15 +13,7 @@ const port = process.env.PORT || 3000;
 // app.use(cors());
 
 //middlewares
-app.use(
-  cors({
-    origin: ['http://localhost:5173', 'https://turf-booking-2ptt.onrender.com'], // Allow your frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true, // Allow cookies and credentials if needed
-  })
-);
-
+app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
