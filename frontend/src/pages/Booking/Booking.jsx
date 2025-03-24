@@ -120,15 +120,22 @@ const BookingPage = () => {
         }
       );
 
-      handlePayment({ amount });
+      // Wait for the payment to complete
+      const paymentSuccessful = await handlePayment({ amount });
 
-      toast.success('Booking successful!');
+      // toast.success('Booking successful!');
 
-      checkBookedSlots(); // Refresh booked slots
+      if (paymentSuccessful) {
+        toast.success('Booking successful!');
 
-      setTimeout(() => {
-        navigate('/booked');
-      }, 2000);
+        // Refresh booked slots and navigate to the booked page
+        checkBookedSlots();
+        setTimeout(() => {
+          navigate('/booked');
+        }, 2000);
+      } else {
+        toast.error('Payment failed. Please try again.');
+      }
     } catch (error) {
       console.error('Error booking slot:', error);
       // return res.status(500).json({ message: error.message });
@@ -142,38 +149,44 @@ const BookingPage = () => {
     console.log(amount);
 
     try {
-      // Create order on backend
-      const { data } = await axios.post('/payment/create-order', {
-        amount,
-      });
+      const { data } = await axios.post('/payment/create-order', { amount });
 
       if (data.success) {
-        console.log('hello');
-        const options = {
-          key: 'rzp_test_GFQKcHCLvHeM90', // Replace with your Test Key ID
+        return new Promise(resolve => {
+          // Return a promise here
+          const options = {
+            key: process.env.RAZORPAY_KEY_ID,
+            currency: data.order.currency,
+            name: 'Wood Cragters',
+            description: 'E-commerce Transaction',
+            order_id: data.order.id,
+            handler: response => {
+              alert('Payment Successful!');
+              console.log(response);
+              resolve(true); // Resolve the promise with success
+            },
+            prefill: {
+              name: 'Nitto Thomas',
+              email: 'nittothomas94@gmail.com',
+              contact: '9446979075',
+            },
+            theme: {
+              color: '#3399cc',
+            },
+            modal: {
+              ondismiss: () => {
+                resolve(false); // Resolve the promise with failure
+              },
+            },
+          };
 
-          currency: data.order.currency,
-          name: 'Wood Cragters',
-          description: 'E-commerce Transaction',
-          order_id: data.order.id,
-          handler: response => {
-            alert('Payment Successful!');
-            console.log(response);
-          },
-          prefill: {
-            name: 'Nitto Thomas',
-            email: 'nittothomas94@gmail.com',
-            contact: '9446979075',
-          },
-          theme: {
-            color: '#3399cc',
-          },
-        };
-        const razorpayInstance = new window.Razorpay(options);
-        razorpayInstance.open();
+          const razorpayInstance = new window.Razorpay(options);
+          razorpayInstance.open();
+        });
       }
     } catch (error) {
       console.error('Payment Failed:', error);
+      return false;
     }
   };
 
