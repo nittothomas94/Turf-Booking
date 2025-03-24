@@ -154,6 +154,7 @@ const BookingPage = () => {
           // Return a promise here
           const options = {
             key: import.meta.env.RAZORPAY_KEY_ID,
+
             currency: data.order.currency,
             name: 'Wood Cragters',
             description: 'E-commerce Transaction',
