@@ -1,0 +1,168 @@
+[33mcommit b9b1c8c607b05752726587a4349ba8ba6dd941a0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Mon Mar 24 16:31:10 2025 +0530
+
+    completed
+
+[33mcommit ad2924533f3a7bec47053ca8400acb5495b57011[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Mon Mar 24 15:11:24 2025 +0530
+
+    cors updated
+
+[33mcommit b7c9c5ed851a2bf697f4e188a96c9d0b59d8e1bb[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Mon Mar 24 15:09:07 2025 +0530
+
+    modified the cors
+
+[33mcommit e6d174792edad21f90b10b90d5dd1eadfe04392b[m
+Merge: 08a8fb3 251512f
+Author: nittothomas <nittothomas94@example.com>
+Date:   Mon Mar 24 15:06:30 2025 +0530
+
+    modifiled the server.js file
+
+[33mcommit 08a8fb3bd2ab8e36ed543addd9e7bbd2450ae319[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Mon Mar 24 15:05:19 2025 +0530
+
+    cahgned
+
+[33mcommit 251512fa26bb55e50fb1cf880d95eb7692131ecc[m
+Author: Nitto Thomas <160035598+nittothomas94@users.noreply.github.com>
+Date:   Mon Mar 24 15:02:00 2025 +0530
+
+    changed
+
+[33mcommit 94f7538047545dee7d5293de74285453bf9143f7[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Mon Mar 24 15:00:33 2025 +0530
+
+    changed
+
+[33mcommit b2d72548a2a82762f1a5de221a75103d1cc4e0c4[m
+Author: Nitto Thomas <160035598+nittothomas94@users.noreply.github.com>
+Date:   Mon Mar 24 14:56:07 2025 +0530
+
+    Delete frontend/.env
+
+[33mcommit 43d858684ef949f4d79ab334c3a317d16d0bd54c[m
+Author: Nitto Thomas <160035598+nittothomas94@users.noreply.github.com>
+Date:   Mon Mar 24 14:54:49 2025 +0530
+
+    Update .env
+
+[33mcommit 5816226c913706593cb170988f398f9f676746d5[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Mon Mar 24 14:03:53 2025 +0530
+
+    completed
+
+[33mcommit bacc35a2b8731eeb1826da591ba5248a0c3451c3[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Mon Mar 24 13:21:21 2025 +0530
+
+    completed
+
+[33mcommit c21fbe2b0b0ef3b06bb2cdd2d511284ce8fea9bb[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Mon Mar 24 12:10:04 2025 +0530
+
+    pament5
+
+[33mcommit 7de0af9fc161fac888fcd94c96228f1ddda93dc8[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Mon Mar 24 12:07:17 2025 +0530
+
+    payment4
+
+[33mcommit f4522b3391beca7dcc52d0f167522401ad3cd61a[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Mon Mar 24 12:00:56 2025 +0530
+
+    patement3
+
+[33mcommit 3924e7eead52e715c4e0766f0d355ccbbcd60af3[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Mon Mar 24 11:56:48 2025 +0530
+
+    payment2
+
+[33mcommit 163df066eaa874d89a717b7573baf75217e6e6cd[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Mon Mar 24 11:48:51 2025 +0530
+
+    payment implimenting
+
+[33mcommit f448f05f358b221fb8f862635637a92fed651099[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Fri Mar 21 16:31:48 2025 +0530
+
+    sklton effects added for all requred pages
+
+[33mcommit cb6bff23a85e496d5414f4d4aea53b58010ff2e4[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Fri Mar 14 10:17:38 2025 +0530
+
+    ipdated admin addTurf page
+
+[33mcommit 6d317813b2ccf092573bfa067701a03613905e76[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Thu Mar 13 22:57:31 2025 +0530
+
+    image upload loading setup
+
+[33mcommit 04b6113f80ba0fff3a4aacb2af216ab01c0a18cf[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Thu Mar 13 22:32:03 2025 +0530
+
+    updated
+
+[33mcommit f67a9689a4fa70425f6cbdff06744ec4765adef1[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Thu Mar 13 22:02:08 2025 +0530
+
+    added a new file vercel.json for refreshing errror in the page handle
+
+[33mcommit 809b682e6b2453fd595a6c609d8dae276439c779[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Thu Mar 13 21:56:24 2025 +0530
+
+    signed up link to updated
+
+[33mcommit 113174d262fa559fbb8d502b3577095b60de7203[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Thu Mar 13 21:20:49 2025 +0530
+
+    changed all the a tag to Link
+
+[33mcommit fad7f6f54a48a6137774bdbcae2b0dccfd873f6a[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Thu Mar 13 21:16:53 2025 +0530
+
+    updated a tag with react link to navigate to another page
+
+[33mcommit 9004aa7662c2f3c3ae6f0d055738827690e4826a[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Thu Mar 13 16:06:55 2025 +0530
+
+    edited Login.jsx
+
+[33mcommit b9a26009a6f091a2a72a12204c24ca4ca424bd3f[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Thu Mar 13 15:45:35 2025 +0530
+
+    edited accountInfo.jsx file
+
+[33mcommit 00c0ccbc2e320ecc7c8a8cd00a7f8236c04b5bce[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Thu Mar 13 15:39:27 2025 +0530
+
+    edited the localhost url to render online url
+
+[33mcommit f79749eccae4477cba953969c725b9c2de177c7a[m
+Author: nittothomas <nittothomas94@example.com>
+Date:   Thu Mar 13 15:18:35 2025 +0530
+
+    first commit
