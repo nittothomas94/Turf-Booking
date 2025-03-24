@@ -13,18 +13,7 @@ const port = process.env.PORT || 3000;
 // app.use(cors());
 
 //middlewares
-// app.use(cors());
-
-// Allow requests from your frontend URL
-const corsOptions = {
-  origin: '*', // Allow all origins temporarily for testing
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
-
+app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
