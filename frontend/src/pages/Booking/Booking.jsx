@@ -43,10 +43,10 @@ const BookingPage = () => {
         Authorization: `Bearer ${token}`, // Attach token in Authorization header
       },
     });
-    console.log(response.data);
     setTurfs(response.data);
   };
 
+  console.log(Turfs);
   //lcoation click
   const onLocationClick = () => {
     window.open(Turfs.googleMap);
@@ -81,7 +81,7 @@ const BookingPage = () => {
 
   // handle booking
 
-  const handleBooking = async () => {
+  const handleBooking = async ({ amount }) => {
     if (!selectedDate || !selectedSlot) {
       toast.error('Please select a date and a slot!');
       return console.log('sdfh');
@@ -120,6 +120,8 @@ const BookingPage = () => {
         }
       );
 
+      handlePayment({ amount });
+
       toast.success('Booking successful!');
 
       checkBookedSlots(); // Refresh booked slots
@@ -130,6 +132,46 @@ const BookingPage = () => {
     } catch (error) {
       console.error('Error booking slot:', error);
       // return res.status(500).json({ message: error.message });
+    }
+  };
+
+  // const amount = Turfs.pricePerHour;
+
+  const handlePayment = async ({ amount }) => {
+    console.log('called');
+    console.log(amount);
+
+    try {
+      // Create order on backend
+      const { data } = await axios.post('/payment/create-order', { amount });
+
+      if (data.success) {
+        console.log('hello');
+        const options = {
+          key: 'rzp_test_GFQKcHCLvHeM90', // Replace with your Test Key ID
+
+          currency: data.order.currency,
+          name: 'Wood Cragters',
+          description: 'E-commerce Transaction',
+          order_id: data.order.id,
+          handler: response => {
+            alert('Payment Successful!');
+            console.log(response);
+          },
+          prefill: {
+            name: 'Nitto Thomas',
+            email: 'nittothomas94@gmail.com',
+            contact: '9446979075',
+          },
+          theme: {
+            color: '#3399cc',
+          },
+        };
+        const razorpayInstance = new window.Razorpay(options);
+        razorpayInstance.open();
+      }
+    } catch (error) {
+      console.error('Payment Failed:', error);
     }
   };
 
@@ -195,11 +237,15 @@ const BookingPage = () => {
 
             <br />
             <h2 className="sub-heading">Total Price = {Turfs.pricePerHour}</h2>
-            <Button
-              text="Book Now"
+
+            <button
               className="book-now"
-              onclick={handleBooking}
-            />
+              onClick={() => {
+                handleBooking({ amount: Turfs.pricePerHour });
+              }}
+            >
+              Book Now
+            </button>
           </div>
         </div>
       </div>

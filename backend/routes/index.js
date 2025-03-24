@@ -6,6 +6,7 @@ const userRoute = require('./user-route');
 const slotRoute = require('./slots-route');
 const adminRoute = require('./admin-route');
 const HomeTurfRoute = require('./hometurfs-route');
+const paymentRoute = require('./paymentRoute');
 
 const router = express.Router();
 
@@ -15,5 +16,5 @@ router.use('/uploadImage', ImageRoute);
 router.use('/user', userRoute);
 router.use('/slots', slotRoute);
 router.use('/admin', adminRoute);
-
+router.use('/payment', paymentRoute);
 module.exports = router;
