@@ -17,7 +17,7 @@ const port = process.env.PORT || 3000;
 
 // Allow requests from your frontend URL
 const corsOptions = {
-  origin: ['http://localhost:5173', 'https://turf-booking-2ptt.onrender.com'], // Allow your frontend URL and backend URL
+  origin: '*', // Allow all origins temporarily for testing
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
