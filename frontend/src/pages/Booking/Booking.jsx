@@ -155,8 +155,8 @@ const BookingPage = () => {
           const options = {
             key: import.meta.env.RAZORPAY_KEY_ID,
             currency: data.order.currency,
-            name: 'Wood Cragters',
-            description: 'E-commerce Transaction',
+            name: 'Turf Booking',
+            description: 'Turf Booking Transaction',
             order_id: data.order.id,
             handler: response => {
               alert('Payment Successful!');
