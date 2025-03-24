@@ -143,7 +143,7 @@ const BookingPage = () => {
 
     try {
       // Create order on backend
-      const { data } = await axios.post('/api/payment/payment/create-order', {
+      const { data } = await axios.post('/payment/create-order', {
         amount,
       });
 
