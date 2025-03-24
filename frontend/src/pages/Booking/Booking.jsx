@@ -47,6 +47,7 @@ const BookingPage = () => {
   };
 
   console.log(Turfs);
+
   //lcoation click
   const onLocationClick = () => {
     window.open(Turfs.googleMap);
@@ -145,9 +146,6 @@ const BookingPage = () => {
   // const amount = Turfs.pricePerHour;
 
   const handlePayment = async ({ amount }) => {
-    console.log('called');
-    console.log(amount);
-
     try {
       const { data } = await axios.post('/payment/create-order', { amount });
 
@@ -155,7 +153,7 @@ const BookingPage = () => {
         return new Promise(resolve => {
           // Return a promise here
           const options = {
-            key: process.env.RAZORPAY_KEY_ID,
+            key: import.meta.env.RAZORPAY_KEY_ID,
             currency: data.order.currency,
             name: 'Wood Cragters',
             description: 'E-commerce Transaction',
