@@ -153,7 +153,8 @@ const BookingPage = () => {
         return new Promise(resolve => {
           // Return a promise here
           const options = {
-            key: import.meta.env.RAZORPAY_KEY_ID,
+            // key: import.meta.env.RAZORPAY_KEY_ID,
+            key: import.meta.env.VITE_RAZORPAY_KEY_ID,
             currency: data.order.currency,
             name: 'Turf Booking',
             description: 'Turf Booking Transaction',

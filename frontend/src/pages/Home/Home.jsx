@@ -71,7 +71,6 @@ const Home = () => {
               className="footballGame"
             />
 
-            {/* jhf */}
             <img
               src="/images/cricket.jpeg"
               alt="Criket Game"
