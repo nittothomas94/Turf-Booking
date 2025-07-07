@@ -6,11 +6,8 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // .env file accessessing to all files setup
-// const dotenv = require('dotenv');
-// dotenv.config('./.env');
-
-//middlewares
-// app.use(cors());
+const dotenv = require('dotenv');
+dotenv.config('./.env');
 
 //middlewares
 app.use(cors());
