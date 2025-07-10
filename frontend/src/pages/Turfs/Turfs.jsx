@@ -99,8 +99,8 @@ const Turfs = () => {
       <div className="turfPage">
         {/* setion 1 Top Heading */}
         <div className="section1-TurfPage">
-          <h1 className="heading">
-            Discover and Book Top Football Grounds in Alappuzha District Online
+          <h1 className="heading xl:text-[35px]  font-[700]">
+            Discover and Book Top Football Grounds in Kerala Online
           </h1>
           <div className="right">
             <i className="fa-solid fa-magnifying-glass"></i>

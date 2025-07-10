@@ -98,11 +98,19 @@
 }
 
 .contact-box .input {
-  height: 55px;
+  height: 65px;
+  margin-bottom: 10px;
 }
 
 .contact-box .con-box-messageInput {
-  height: 100px;
+  height: 150px;
+  padding: 40px;
+}
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .send-button {
@@ -111,6 +119,7 @@
   background-color: rgb(36, 115, 36);
   color: white;
   margin-left: 31%;
+  margin-top: 18%;
 }
 
 #marketing {

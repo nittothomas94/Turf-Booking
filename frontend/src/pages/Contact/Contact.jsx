@@ -99,7 +99,12 @@ const Contact = () => {
           <div className="right">
             <div className="contact-box">
               <form id="contactForm">
-                <Input type="text" label="Name" classname="input" id="name" />
+                <Input
+                  type="text"
+                  label="Name"
+                  classname="input w-full"
+                  id="name"
+                />
                 <Input
                   type="email"
                   label="Email"
